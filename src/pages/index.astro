@@ -1,0 +1,122 @@
+---
+
+ import { Trabajo } from '../Modelos/Trabajo' 
+ import { format } from 'date-fns';
+ import { es } from 'date-fns/locale';
+ import { Image } from 'astro:assets';
+ import localImageMe from '../../public/me.png'
+ import jobSVG from '../../public/jobhistory.svg'
+
+
+ const trabajos : Array<Trabajo> = [
+	{
+		Titulo : 'Desarrollador web',
+		Empresa : 'Forte Innovation Consulting',
+		FechaInicio : new Date('2024-02-17'),
+		TrabajaActualmente : true,
+		Descripcion : [
+			'Desarrollo de backend con .Net Framework',
+			'Detección y Solución de Issues',
+			'Desarrollo Frontend con Razor Pages, AngularJS, JavaScript, PHP, CSS y Bootstrap'
+		],
+	},
+	{
+		Titulo : 'Becario de desarrollo web (Contrato de residencias)',
+		Empresa : 'Inceptio S.C',
+		FechaInicio : new Date('2023-11-18'),
+		FechaTermino : new Date('2024-06-01'),
+		TrabajaActualmente : false,
+		Descripcion : [
+			'Programación páginas web para diferentes clientes.',
+			'Modelado de bases de datos.',
+			'Elaboración para matrices de pruebas.'
+		],
+	},
+	{
+		Titulo : 'Becario de desarrollo de software',
+		Empresa : 'Forte Innovation Consulting',
+		FechaInicio : new Date('2023-07-01'),
+		FechaTermino : new Date('2023-12-31'),
+		TrabajaActualmente : false,
+		Descripcion : [
+			'Elaboración de pruebas unitarias y desarrollo de software en base a requerimientos del cliente.'
+		],
+	},
+	{
+		Titulo : 'Analista de bases de datos',
+		Empresa : 'Castores',
+		FechaInicio : new Date('2023-11-18'),
+		FechaTermino : new Date('2024-06-02'),
+		TrabajaActualmente : false,
+		Descripcion : [
+			'Realización de proyectos en Power BI para obtención de indicadores.',
+			'Mantenimiento, realización y optimización de base de datos.',
+			'Manejo de bases de datos con MySQL, Transac-SQL, PosgreSQL.',
+			'Montaje de servidores de bases de datos con sistemas operativos Linux (Centos 6 y 7, Rocky Linux).',
+			'Elaboración de Procesos Almacenados para replicación y procesamiento de la información.',
+			'Atención a usuarios mediante el uso de ticket o atencion inmediata mediante telefono.'
+		],
+	}
+ ]
+
+ function formatearFecha(fecha:Date | undefined) {
+	if (!fecha || isNaN(fecha.getTime())) return 'Fecha no disponible';
+	let fechaFormtateada = format( fecha, 'MMMM yyyy', {locale : es} );
+	fechaFormtateada = fechaFormtateada.charAt(0).toUpperCase() + fechaFormtateada.slice(1);
+	return fechaFormtateada;
+ }
+
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<section>
+			<div class="grid grid-cols-6">
+				<div  class="col-start-2 col-span-4 my-48">
+					<div class="flex items-center">
+						<Image src={localImageMe} alt="Imagen de Angel" class="rounded-full size-20 my-8" loading="eager"/>
+						<span class="ml-5 border border-sky-500 rounded-full px-3 py-2 bg-sky-200">Disponible para trabajar</span>
+					</div>
+					<strong class="text-4xl"> Ángel Eduardo Hernández López </strong>
+					<p class="text-2xl font-bold"> Desarrollador fullstack <p>
+					<p class="pr-48 mt-3 text-xl"> Ingeniero en sistemas computacionales con especialización en desarrollo de aplicaciones empresariales. </p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="grid grid-cols-6">
+				<div class="col-start-2 col-span-4">
+					<div class="flex items-center mb-10">
+						<Image src={jobSVG} alt="Historial" loading="eager"/>
+						<strong class="ml-3 text-lg">Mi experiencia laboral</strong>
+					</div>
+					<div class="grid grid-cols-6 gap-10">
+					{trabajos.map((trabajo, index) => (
+						<div class="col-span-2 mr-3">
+							<p><strong>{trabajo.Titulo}</strong></p>
+							<p>{trabajo.Empresa}</p>
+							<p>
+								{formatearFecha(trabajo.FechaInicio)} - {trabajo.TrabajaActualmente ? 'Actualmente' : formatearFecha(trabajo.FechaTermino)}
+							</p>
+						</div>
+						<div class="col-span-4 ml-10">
+							<ul class="list-disc">
+								{trabajo.Descripcion.map((desc, i) => (
+									<li class="text-sm">{desc}</li>
+								))}
+							</ul>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>		
+	</body>
+</html>
