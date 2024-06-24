@@ -1,23 +1,25 @@
 ---
 
- import { Trabajo } from '../Modelos/Trabajo' 
+ import { Trabajo } from '../Modelos/Trabajo';
  import { format } from 'date-fns';
  import { es } from 'date-fns/locale';
  import { Image } from 'astro:assets';
- import localImageMe from '../../public/me.png'
- import jobSVG from '../../public/jobhistory.svg'
-
+ import localImageMe from '../../public/me.png';
+ import jobSVG from '../../public/jobhistory.svg';
+ import CertificadoJava from '../../public/CertificadoJavaAH.png';
+ import CertificadoGoogle from '../../public/CertificadoGoogleCF.png';
+ import CertificadoDevNet from '../../public/CertificadoDevNet.png';
+ import certificateSVG from '../../public/Certificate.svg';
 
  const trabajos : Array<Trabajo> = [
 	{
-		Titulo : 'Desarrollador web',
-		Empresa : 'Forte Innovation Consulting',
+		Titulo : 'Desarrollador web',Empresa : 'Forte Innovation Consulting',
 		FechaInicio : new Date('2024-02-17'),
 		TrabajaActualmente : true,
 		Descripcion : [
-			'Desarrollo de backend con .Net Framework',
-			'Detección y Solución de Issues',
-			'Desarrollo Frontend con Razor Pages, AngularJS, JavaScript, PHP, CSS y Bootstrap'
+			'Desarrollo de backend con .Net Framework.',
+			'Detección y Solución de Issues.',
+			'Desarrollo Frontend con Razor Pages, AngularJS, JavaScript, PHP, CSS y Bootstrap.'
 		],
 	},
 	{
@@ -39,7 +41,8 @@
 		FechaTermino : new Date('2023-12-31'),
 		TrabajaActualmente : false,
 		Descripcion : [
-			'Elaboración de pruebas unitarias y desarrollo de software en base a requerimientos del cliente.'
+			'Elaboración de pruebas unitarias.',
+			'Desarrollo de software en base a requerimientos del cliente.'
 		],
 	},
 	{
@@ -92,9 +95,9 @@
 			</div>
 		</section>
 		<section>
-			<div class="grid grid-cols-6">
+			<div class="grid grid-cols-6 mb-16">
 				<div class="col-start-2 col-span-4">
-					<div class="flex items-center mb-10">
+					<div class="relative flex items-center mb-10">
 						<Image src={jobSVG} alt="Historial" loading="eager"/>
 						<strong class="ml-3 text-lg">Mi experiencia laboral</strong>
 					</div>			
@@ -123,6 +126,46 @@
 							</div>
 						</div>
 					))}
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="grid grid-cols-6">
+				<div class="col-start-2 col-span-4">
+					<div class="relative flex items-center">
+						<Image src={certificateSVG} alt="Icono de Certificación" loading="eager"/>
+						<strong class="ml-3 text-lg"> Certificaciones </strong>
+					</div>
+					<div class="grid grid-cols-6 gap-10 mt-5 relative items-center">
+						<div class="col-span-2 mr-3">
+							<Image src={CertificadoJava} alt="Certificado Java" loading="eager" class="rounded-xl"/>
+						</div>
+						<div class="col-span-4">
+							<strong> Introduction to Programming using Java </strong>
+							<p class="text-md"> Microsoft - 2021 </p>
+							<p class="text-md"> Esta certificación está diseñada para evaluar los conocimientos fundamentales de los individuos en la programación con Java </p>
+							<p> Para verificar la certificación ingresa a <a href="https://verify.certiport.com/" target="_blank" rel="noopener noreferrer" style="color: blue;"> 
+								https://verify.certiport.com/ </a> e ingresar el siguiente codigo
+								"RqMU-4TWx" en el codigo de identificación 
+							</p>
+						</div>
+						<div class="col-span-2 mr-3">
+							<Image src={CertificadoGoogle} alt="Certificado Google Cloud Fundations" loading="eager" class="rounded-xl"/>
+						</div>
+						<div class="col-span-4">
+							<strong> Google Cloud Computing Foundations </strong>
+							<p class="text-md"> Google Cloud Foundations Academy - 2023 </p>
+							<p class="text-md"> Introducción integral a los conceptos y servicios de Google Cloud Platform (GCP). </p>
+						</div>
+						<div class="col-span-2 mr-3">
+							<Image src={CertificadoDevNet} alt="Certificado Google Cloud Fundations" loading="eager" class="rounded-xl"/>
+						</div>
+						<div class="col-span-4">
+							<strong> DevNet Associate </strong>
+							<p class="text-md"> Cisco Networking Academy - 2023 </p>
+							<p class="text-md"> Se centra en las habilidades esenciales necesarias para desarrollar y mantener aplicaciones en redes y entornos de automatización utilizando tecnologías de Cisco.  </p>
+						</div>	
+					</div>
 				</div>
 			</div>
 		</section>		
