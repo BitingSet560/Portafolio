@@ -1,0 +1,107 @@
+
+@keyframes hero-gradient-animation {
+    0% {
+        --c-0: hsla(336.00000000000006, 100%, 61%, 0.19);
+        --y-0: 93%;
+        --x-0: 93%;
+        --s-start-0: 3%;
+        --s-end-0: 63%;
+        --c-1: hsla(189.26470588235296, 100%, 61%, 0.19);
+        --s-start-1: 3%;
+        --s-end-1: 63%;
+        --x-1: 4%;
+        --y-1: 6%;
+    }
+
+    100% {
+        --c-0: hsla(266, 93%, 82%, 0.39);
+        --y-0: 80%;
+        --x-0: 10%;
+        --s-start-0: 8.599031645676185%;
+        --s-end-0: 74.81436157226562%;
+        --c-1: hsla(266, 93%, 82%, 0.39);
+        --s-start-1: 11.010535930765085%;
+        --s-end-1: 74.81436157226562%;
+        --x-1: 108%;
+        --y-1: 45%;
+    }
+}
+
+@property --c-0 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(336.00000000000006, 100%, 61%, 0.19)
+}
+
+@property --y-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 93%
+}
+
+@property --x-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 93%
+}
+
+@property --s-start-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 3%
+}
+
+@property --s-end-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 63%
+}
+
+@property --c-1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(189.26470588235296, 100%, 61%, 0.19)
+}
+
+@property --s-start-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 3%
+}
+
+@property --s-end-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 63%
+}
+
+@property --x-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 4%
+}
+
+@property --y-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 6%
+}
+
+body {
+    --c-0: hsla(336.00000000000006, 100%, 61%, 0.19);
+    --y-0: 93%;
+    --x-0: 93%;
+    --c-1: hsla(189.26470588235296, 100%, 61%, 0.19);
+    --x-1: 4%;
+    --y-1: 6%;
+    background-color: hsla(286, 60%, 56%, 0);
+    background-image: radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1));
+    animation: hero-gradient-animation 10s linear infinite alternate;
+    background-blend-mode: normal, normal;
+}
+
+.section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}

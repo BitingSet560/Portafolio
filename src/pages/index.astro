@@ -10,6 +10,7 @@ import { Trabajo } from '../Modelos/Trabajo';
  import CertificadoDevNet from '../../public/CertificadoDevNet.png';
  import certificateSVG from '../../public/Certificate.svg';
  import MailSVG from '../../public/mail.svg';
+ import MeSVG from '../../public/me.svg';
 
  const trabajos : Array<Trabajo> = [
 	{
@@ -72,14 +73,18 @@ import { Trabajo } from '../Modelos/Trabajo';
 ---
 
 <html lang="en">
+	<style>
+		@import './src/Styles/style.css';
+	</style>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />		
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		
 		<title>Astro</title>
 	</head>
-	<body>
+	<body>		
 		<section>
 			<div class="relative grid lg:grid-cols-6 md:grid-cols-12 sm:grid-cols-8 grid-cols-10">
 				<div  class="relative my-48 col-span-8 col-start-2 lg:col-span-4 lg:col-start-2 md:col-span-10 md:col-start-2 sm:col-span-6 sm:col-start-2">
@@ -140,7 +145,7 @@ import { Trabajo } from '../Modelos/Trabajo';
 			</div>
 		</section>
 		<section>
-			<div class="relative grid lg:grid-cols-6 md:grid-cols-12 sm:grid-cols-8 grid-cols-10">
+			<div class="relative grid lg:grid-cols-6 md:grid-cols-12 sm:grid-cols-8 grid-cols-10 mb-16">
 				<div class="col-span-8 col-start-2 lg:col-span-4 lg:col-start-2 md:col-span-10 md:col-start-2 sm:col-span-6 sm:col-start-2">
 					<div class="relative flex items-center">
 						<Image src={certificateSVG} alt="Icono de Certificación" loading="eager"/>
@@ -175,7 +180,25 @@ import { Trabajo } from '../Modelos/Trabajo';
 							<p class="text-md"> Cisco Networking Academy - 2023 </p>
 							<p class="text-md"> Se centra en las habilidades esenciales necesarias para desarrollar y mantener aplicaciones en redes y entornos de automatización utilizando tecnologías de Cisco.  </p>
 						</div>	
+						
 					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="relative grid lg:grid-cols-6 md:grid-cols-12 sm:grid-cols-8 grid-cols-10">
+				<div class="col-span-8 col-start-2 lg:col-span-4 lg:col-start-2 md:col-span-10 md:col-start-2 sm:col-span-6 sm:col-start-2">
+					<div class="relative flex items-center">
+						<Image src={MeSVG} alt="Icono de acerca de mi" loading="eager"/>
+						<strong class="ml-3 text-lg"> Sobre mi </strong>
+					</div>
+					<p class="text-md mt-8"> Mi nombre es Ángel Eduardo Hernández López, soy un desarrollador de software interesado en el desarrollo paginas web. </p>
+					<p class="text-md"> Soy estudiante del Tecnologico Nacional de Mexico en León, en el cual participe en diferentes proyectos que me ayudaron 
+						durante toda mi formación academica, los cuales me dieron los recursos para obtener puestos con el analisis de datos, ciencia de datos, 
+						desarrollo frontend, desarollo backend y adminstración de servidores.
+					</p>
+					<p class="text-md"> Actualmente estoy en busqueda de nuevas experiencias que puedan poner a prueba todas estas aptitudes que he ido obtniendo a lo largo de estos años.
+					</p>
 				</div>
 			</div>
 		</section>		
