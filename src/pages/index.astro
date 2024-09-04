@@ -14,9 +14,22 @@ import { Trabajo } from '../Modelos/Trabajo';
 
  const trabajos : Array<Trabajo> = [
 	{
-		Titulo : 'Desarrollador web',Empresa : 'Forte Innovation Consulting',
+		Titulo : 'Analista desarrollador',
+		Empresa : 'Plexus Tech',
 		FechaInicio : new Date('2024-02-17'),
 		TrabajaActualmente : true,
+		Descripcion : [
+			'Desarrollo de backend con .Net Framework.',
+			'Detección y Solución de Issues.',
+			'Desarrollo Frontend con Razor Pages, AngularJS, JavaScript, PHP, CSS y Bootstrap.'
+		],
+	},
+	{
+		Titulo : 'Desarrollador web',
+		Empresa : 'Forte Innovation Consulting',
+		FechaInicio : new Date('2024-02-17'),
+		FechaTermino : new Date('2024-07-01'),
+		TrabajaActualmente : false,
 		Descripcion : [
 			'Desarrollo de backend con .Net Framework.',
 			'Detección y Solución de Issues.',
@@ -87,7 +100,7 @@ import { Trabajo } from '../Modelos/Trabajo';
 	<body>		
 		<section>
 			<div class="relative grid lg:grid-cols-6 md:grid-cols-12 sm:grid-cols-8 grid-cols-10">
-				<div  class="relative my-48 col-span-8 col-start-2 lg:col-span-4 lg:col-start-2 md:col-span-10 md:col-start-2 sm:col-span-6 sm:col-start-2">
+				<div  class="relative my-32 lg:my-48 md:my-38 sm:my-32 col-span-8 col-start-2 lg:col-span-4 lg:col-start-2 md:col-span-10 md:col-start-2 sm:col-span-6 sm:col-start-2">
 					<div class="flex relative items-center">
 						<Image src={localImageMe} alt="Imagen de Angel" class="rounded-full size-20 my-8" loading="eager"/>
 						<span class="ml-5 border border-sky-500 rounded-full px-3 py-2 bg-sky-200">Disponible para trabajar</span>
